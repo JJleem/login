@@ -2,11 +2,19 @@ import React from "react";
 import styled from "styled-components";
 import ddd from "./asset/img/ddd";
 import iPhone from "./asset/img/iPhone.png";
+import hand from "./asset/img/hand.png";
+import phonehead from "./asset/img/phonehead.png";
+import Login from "./Components/Login";
 function App() {
   return (
     <Container>
       <MookUp>
-        <InnerContainer>dddddddddddddd</InnerContainer>
+        <PhoneHead />
+        <InnerContainer>
+          <Hr />
+          <Logo />
+          <Login />
+        </InnerContainer>
       </MookUp>
     </Container>
   );
@@ -15,41 +23,74 @@ function App() {
 export default App;
 
 const Container = styled.div`
-  /* background: url("./asset/img/iphone.png"); */
+  background-color: #fff;
   width: 100%;
   height: 100vh;
-  border: 1px solid #f00;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: -3;
+  background: url(${hand});
+  background-size: cover;
+  background-position: cover;
+  background-repeat: no-repeat;
+  object-fit: center;
   overflow: hidden;
 `;
 const MookUp = styled.div`
   background: url(${iPhone});
-  z-index: 9999;
   overflow: hidden;
-  width: 400px;
+  width: 420px;
   height: 850px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
   position: relative;
-  border: 1px solid #f00;
+  z-index: 0;
+  overflow: hidden;
+`;
+const PhoneHead = styled.div`
+  background: url(${phonehead});
+  height: 30px;
+  width: 208px;
+  position: absolute;
+  z-index: 2 !important;
+  top: 4.5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
 `;
 const InnerContainer = styled.div`
-  position: absolute;
+  width: 370px;
+  height: 803px;
+  background: #fff;
   z-index: 1;
-  width: 100%;
-  height: 90%;
-
-  background: #0f0;
+  padding: 60px 20px 20px 20px;
+  border-radius: 35px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
-const Bg = styled.div`
-  background: url("https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png");
+const Logo = styled.div`
+  background-image: url("https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png");
   background-size: 372px 326px;
-  background-position: 0 -244px;
+  background-position: -66px -226px;
   background-repeat: no-repeat;
-  width: 94px;
-  height: 18px;
+  width: 73px;
+  height: 14px;
+  display: block;
+`;
+const Hr = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #eee;
+  top: 0;
+  left: 0;
 `;

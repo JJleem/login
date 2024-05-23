@@ -3,17 +3,18 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { RecoilRoot } from "recoil";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { darkTheme } from "./theme/theme";
+import { theme } from "./theme/theme";
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
   *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    color:${(props) => props.theme.textColor}
   }
   body {
-    font-family: "Source Sans 3", sans-serif;
+    font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
   }
   ul,li {
     list-style:none;
@@ -29,7 +30,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <RecoilRoot>
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
     </ThemeProvider>
