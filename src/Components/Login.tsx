@@ -76,30 +76,35 @@ const Login = () => {
         <ToggleIcon style={togglestyle} onClick={ChangeToggle} />
       </Title>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <Section>
-          <UserIcon />
-          <InputUser {...register("username")} placeholder="아이디"></InputUser>
-          <UserInnerText>@naver.com</UserInnerText>
-        </Section>
+        <Wrapper>
+          <Section>
+            <UserIcon />
+            <InputUser
+              {...register("username")}
+              placeholder="아이디"
+            ></InputUser>
+            <UserInnerText>@naver.com</UserInnerText>
+          </Section>
 
-        <Section>
-          <PasswordIcon />
-          <InputPass
-            type={passwordShown ? "text" : "password"}
-            {...register("password")}
-            placeholder="비밀번호"
-          />
-          <EyeIcon style={eyestyle} onClick={ChangeEye} />
-        </Section>
+          <Section>
+            <PasswordIcon />
+            <InputPass
+              type={passwordShown ? "text" : "password"}
+              {...register("password")}
+              placeholder="비밀번호"
+            />
+            <EyeIcon type="button" style={eyestyle} onClick={ChangeEye} />
+          </Section>
 
-        <Section>
-          <MailIcon />
-          <InputEmail
-            type="email"
-            {...register("email")}
-            placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인"
-          />
-        </Section>
+          <Section>
+            <MailIcon />
+            <InputEmail
+              type="email"
+              {...register("email")}
+              placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인"
+            />
+          </Section>
+        </Wrapper>
         {errors.username && <Error>{errors.username.message}</Error>}
         {errors.password && <Error>{errors.password.message}</Error>}
         {errors.email && <Error>{errors.email.message}</Error>}
@@ -115,6 +120,16 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   padding-top: 20px;
+`;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 0;
 `;
 const Title = styled.div`
   font-size: 13px;
@@ -145,7 +160,7 @@ const Error = styled.p`
 `;
 const Section = styled.div`
   width: 100%;
-  flex: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
