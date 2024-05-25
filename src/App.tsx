@@ -53,6 +53,8 @@ const MookUp = styled.div`
   z-index: 0;
   overflow: hidden;
   @media ${({ theme }) => theme.xs} {
+    height: 100vh;
+    width: 100vw;
   }
 `;
 const PhoneHead = styled.div`
@@ -68,6 +70,9 @@ const PhoneHead = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
+  @media ${({ theme }) => theme.xs} {
+    display: none;
+  }
 `;
 const InnerContainer = styled.div`
   width: 370px;
@@ -81,7 +86,10 @@ const InnerContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   @media ${({ theme }) => theme.xs} {
-    padding-top: 10px;
+    padding-top: 20px;
+    height: 100vh;
+    width: 100vw;
+    border-radius: 0;
   }
 `;
 const Logo = styled.div`

@@ -365,6 +365,10 @@ const LoginBtn = styled.button`
   background: #09aa5c;
   cursor: pointer;
   bottom: 50px;
+  @media ${({ theme }) => theme.xs} {
+    bottom: 10px;
+    width: 80%;
+  }
 `;
 
 const Container = styled.div`
@@ -391,6 +395,9 @@ const Title = styled.div`
   justify-content: end;
   gap: 5px;
   margin-bottom: 10px;
+  @media ${({ theme }) => theme.xs} {
+    margin-bottom: 0px;
+  }
 `;
 const Form = styled.form`
   width: 100%;
@@ -407,6 +414,10 @@ const Error = styled.p`
   font-size: 13px;
   line-height: 18px;
   color: #ff3f3f;
+  @media ${({ theme }) => theme.xs} {
+    font-size: 11px;
+    margin: 5px 4px 0;
+  }
 `;
 const Section = styled.div`
   width: 100%;
@@ -446,12 +457,13 @@ const UserInnerText = styled.div`
 `;
 const InputPass = styled.input`
   width: 100%;
-  border: none;
+
   font-size: 14px;
   line-height: 22px;
   color: #222;
   padding: 10px 0px 10px 45px;
   border: 1px solid #ccc;
+  border-radius: 0;
 
   &:focus {
     -webkit-appearance: none;
@@ -512,17 +524,21 @@ const SelectTelecom = styled.select`
   width: 100%;
   font-size: 14px;
   line-height: 22px;
-
   padding: 10px 0px 10px 45px;
   border: 1px solid #ccc;
-
+  border-top: none;
+  border-bottom: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  background: #fff;
   &:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border: 1px solid #2db400;
     outline: 0;
-
     text-decoration: none;
     cursor: pointer;
     -webkit-text-size-adjust: none;
