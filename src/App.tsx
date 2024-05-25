@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import ddd from "./asset/img/ddd";
 import iPhone from "./asset/img/iPhone.png";
 import hand from "./asset/img/hand.png";
 import phonehead from "./asset/img/phonehead.png";
 import Login from "./Components/Login";
+
 function App() {
   return (
     <Container>
@@ -37,6 +37,8 @@ const Container = styled.div`
   background-repeat: no-repeat;
   object-fit: center;
   overflow: hidden;
+  @media ${({ theme }) => theme.xs} {
+  }
 `;
 const MookUp = styled.div`
   background: url(${iPhone});
@@ -50,6 +52,8 @@ const MookUp = styled.div`
   position: relative;
   z-index: 0;
   overflow: hidden;
+  @media ${({ theme }) => theme.xs} {
+  }
 `;
 const PhoneHead = styled.div`
   background: url(${phonehead});
@@ -76,6 +80,9 @@ const InnerContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media ${({ theme }) => theme.xs} {
+    padding-top: 10px;
+  }
 `;
 const Logo = styled.div`
   background-image: url("https://ssl.pstatic.net/static/nid/join/m_sp_06_realname_48b1e603.png");
